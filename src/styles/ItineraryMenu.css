@@ -1,0 +1,262 @@
+.itinerary-menu {
+  position: fixed;
+  z-index: 2000;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  padding: 1.5rem;
+  min-width: 320px;
+  max-width: 400px;
+  cursor: default;
+  user-select: auto;
+  transition: var(--transition);
+}
+
+.itinerary-menu.dragging {
+  cursor: grabbing;
+  user-select: none;
+  box-shadow: var(--shadow-xl);
+  transform: scale(1.02);
+}
+
+.itinerary-menu-header {
+  cursor: grab;
+  font-weight: 600;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.itinerary-menu.dragging .itinerary-menu-header {
+  cursor: grabbing;
+  background: var(--primary);
+  color: white;
+}
+
+.itinerary-menu-close {
+  background: none;
+  color: var(--text-secondary);
+  box-shadow: none;
+  font-size: 1.25rem;
+  padding: 0.25rem;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.itinerary-menu-close:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.itinerary-menu-options {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.itinerary-menu-options label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.itinerary-menu-options input {
+  width: 80px;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+}
+
+.itinerary-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.itinerary-menu li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+}
+
+.itinerary-menu-remove {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: none;
+}
+
+.itinerary-menu-remove:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+.itinerary-menu-generate {
+  margin-top: 1rem;
+}
+
+.itinerary-menu-generate button {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.itinerary-menu-generate button:hover {
+  background: var(--primary-dark);
+}
+
+.itinerary-menu-generate button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.itinerary-menu-plan {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.itinerary-menu-plan h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.itinerary-menu-plan p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.itinerary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.view-button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  box-shadow: var(--shadow);
+}
+
+.view-button:hover {
+  background: var(--primary-dark);
+}
+
+/* Updated download button - only for PDF now */
+.pdf-download {
+  background: var(--danger);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pdf-download:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Small loading spinner for buttons */
+.loading-spinner-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4px;
+}
+
+.spinner-small {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-left: 2px solid white;
+  border-radius: 50%;
+  animation: spin-small 0.8s linear infinite;
+}
+
+@keyframes spin-small {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced button disabled states */
+.itinerary-menu-generate button:disabled,
+.pdf-download:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pdf-download:disabled {
+  background: #ef4444;
+  transform: none;
+}
+
+.pdf-download:disabled:hover {
+  background: #ef4444;
+  transform: none;
+}
